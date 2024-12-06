@@ -1,4 +1,4 @@
-import InsightForm from '@/components/warung-saham/insight/InsightForm'
+import InsightForm from '@/components/features/warung-saham/insight/components/InsightForm'
 import RekomForm from '@/components/warung-saham/rekom/RekomForm';
 import React from 'react'
 

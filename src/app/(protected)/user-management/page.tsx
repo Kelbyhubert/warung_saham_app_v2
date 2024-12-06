@@ -1,4 +1,4 @@
-import Search from "@/components/ui/input/search";
+import Search from "@/components/common/input/search";
 import UserTable from "@/components/user-management/UserTable";
 import { SearchParams } from "@/types/common";
 import { cookies } from "next/headers";

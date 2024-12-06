@@ -1,4 +1,4 @@
-import UserForm from '@/components/user-management/UserForm'
+import UserForm from '@/components/features/user-management/components/UserForm'
 import React from 'react'
 
 const NewUserPage = () => {
