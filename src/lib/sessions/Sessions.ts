@@ -1,6 +1,5 @@
 import { cookies } from "next/headers";
 import { getIronSession, SessionOptions } from 'iron-session';
-import {setCookie} from 'cookies-next'
 
 export interface session {
   token: string

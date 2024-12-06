@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/common/button'
 import RekomFilterDialog from '@/components/warung-saham/rekom/RekomFilterDialog'
 import RekomTable from '@/components/warung-saham/rekom/RekomTable'
 import { SearchParams } from '@/types/common'
