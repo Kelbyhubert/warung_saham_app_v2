@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
-import TextField from '../../common/input/textfield'
-import DateInput from '../../common/input/date'
-import { Button } from '../../common/button'
+import TextField from '../../../common/input/textfield'
+import DateInput from '../../../common/input/date'
+import { Button } from '../../../common/button'
 
 interface UserFormProps {
     id? : string

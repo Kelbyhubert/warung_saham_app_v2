@@ -1,4 +1,4 @@
-import InsightForm from '@/components/warung-saham/insight/components/InsightForm'
+import InsightForm from '@/components/features/warung-saham/insight/components/InsightForm'
 import React from 'react'
 
 type Params = Promise<{id : string}>

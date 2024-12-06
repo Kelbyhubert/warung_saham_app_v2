@@ -1,33 +1,11 @@
 import axios from "axios";
 import { config } from "./Config";
-import { cookies, headers } from "next/headers";
-import { createSession, createSessionV1, getSession } from "../sessions/Sessions";
-import { rotateToken } from "@/app/actions/auth/AuthAction";
-import { ApiClient } from "./ApiClient";
+import { cookies } from "next/headers";
+import {createSessionV1 } from "../sessions/Sessions";
 import { generateToken } from "@/services/auth";
 
 export const SecureApiClient = axios.create(config);
 
-let tokenCache : string | undefined | null = null;
-let tokenExpiredDate = Date.now();
-
-const getAccessToken = async () => {
-    console.debug("Expired Date :" + new Date(tokenExpiredDate));
-    if(tokenCache && Date.now() < tokenExpiredDate){
-        console.debug("Cache token")
-        return tokenCache;
-    }
-    
-    // // // const session = await auth();
-    // // const token = session?.accessToken;
-
-    // // if(token){
-    // //     tokenCache = token;
-    // //     tokenExpiredDate = session.expiredDate;
-    // // }
-    
-    // return token;
-}
 
 SecureApiClient.interceptors.request.use(
     async(config : any) => {
@@ -56,6 +34,7 @@ SecureApiClient.interceptors.response.use(
                     const data = refreshResponse.data;
                     createSessionV1(data.data.accessToken,data.data.expiredDate,data.data.refreshToken);
                     originalRequest.headers.Authorization = 'Bearer ' + data.data.accessToken;
+                    console.log("================== end Refresh =====================");
                     return SecureApiClient(originalRequest);
 
                 }catch(error){

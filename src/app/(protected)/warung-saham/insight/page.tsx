@@ -1,6 +1,6 @@
 import { Button } from '@/components/common/button';
-import InsightFilterDialog from '@/components/warung-saham/insight/components/InsightFilterDialog'
-import InsightTable from '@/components/warung-saham/insight/components/InsightTable'
+import InsightFilterDialog from '@/components/features/warung-saham/insight/components/InsightFilterDialog'
+import InsightTable from '@/components/features/warung-saham/insight/components/InsightTable'
 import { SearchParams } from '@/types/common';
 import Link from 'next/link'
 

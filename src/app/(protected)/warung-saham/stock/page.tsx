@@ -1,6 +1,6 @@
 import { Button } from '@/components/common/button';
 import Search from '@/components/common/input/search';
-import StockTable from '@/components/warung-saham/stock/components/StockTable';
+import StockTable from '@/components/features/warung-saham/stock/components/StockTable';
 import { SearchParams } from '@/types/common';
 import Link from 'next/link';
 import React from 'react'

@@ -8,7 +8,7 @@ import { RekomTableData } from '@/types/Rekom';
 import { dateFormatV1 } from '@/utils/DateFormat';
 import { Edit2, Trash2 } from 'lucide-react';
 import React from 'react'
-import useFetchRekoms from './RekomTable.hook';
+import useFetchRekoms from '../hooks/RekomTable.hook';
 
 interface RekomTableProps{
   currentIndex : number

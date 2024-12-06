@@ -1,12 +1,12 @@
 'use client'
 import React from 'react'
-import Table from '../common/table'
+import Table from '@/components/common/table'
 import { UserTableData } from '@/types/User'
-import Column from '../common/column';
-import LinkButton from '../common/LinkButton';
+import Column from '@/components/common/column';
+import LinkButton from '@/components/common/LinkButton';
 import { Edit2 } from 'lucide-react';
-import useFetchUsers from './UserTable.hook';
-import Pagination from '../common/pagination';
+import useFetchUsers from '../hooks/UserTable.hook';
+import Pagination from '@/components/common/pagination';
 
 const dummyData : UserTableData[] = [];
 
