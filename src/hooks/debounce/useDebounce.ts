@@ -1,15 +1,15 @@
-import React from "react"
+import React from "react";
 
-export const useDebounce = (input: string, delay : number) => {
-    const [value , setValue] = React.useState<any>(input);
+export const useDebounce = (input: string, delay: number) => {
+  const [value, setValue] = React.useState<any>(input);
 
-    React.useEffect(() => {
-        const handler = setTimeout(() => {
-            setValue(input);
-        },delay);
-        
-        return () => clearTimeout(handler);
-    },[input,delay]);
+  React.useEffect(() => {
+    const handler = setTimeout(() => {
+      setValue(input);
+    }, delay);
 
-    return value;
-}
+    return () => clearTimeout(handler);
+  }, [input, delay]);
+
+  return value;
+};

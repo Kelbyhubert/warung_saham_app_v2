@@ -1,3 +1,3 @@
 export interface BaseTableData {
-    id: number
+  id: number;
 }

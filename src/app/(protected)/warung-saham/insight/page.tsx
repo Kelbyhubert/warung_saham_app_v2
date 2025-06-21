@@ -1,17 +1,16 @@
-import { Button } from '@/components/common/button';
-import InsightFilterDialog from '@/components/features/warung-saham/insight/components/InsightFilterDialog'
-import InsightTable from '@/components/features/warung-saham/insight/components/InsightTable'
-import { SearchParams } from '@/types/common';
-import Link from 'next/link'
+import { Button } from "@/components/common/button";
+import InsightFilterDialog from "@/components/features/warung-saham/insight/components/InsightFilterDialog";
+import InsightTable from "@/components/features/warung-saham/insight/components/InsightTable";
+import { SearchParams } from "@/types/common";
+import Link from "next/link";
 
-import React from 'react'
+import React from "react";
 
-interface InsightPageProps{
+interface InsightPageProps {
   searchParams: SearchParams;
 }
 
-const InsightPage = async ({searchParams}: InsightPageProps) => {
-
+const InsightPage = async ({ searchParams }: InsightPageProps) => {
   const queryParams = await searchParams;
 
   const currentPage = Number(queryParams.index) || 1;
@@ -20,43 +19,40 @@ const InsightPage = async ({searchParams}: InsightPageProps) => {
 
   return (
     <>
-    <div className='p-2 m-2'>
-      <div className='flex justify-between items-center w-full p-2'>
-        <h2 className='text-3xl'>INSIGHT</h2>
-        <div className='flex gap-2'>
-            <Button size='lg' variant='outline' asChild>
+      <div className="p-2 m-2">
+        <div className="flex justify-between items-center w-full p-2">
+          <h2 className="text-3xl">INSIGHT</h2>
+          <div className="flex gap-2">
+            <Button size="lg" variant="outline" asChild>
               <Link
                 href={{
                   query: {
                     ...queryParams,
-                    filterModal: true
-                  }
-              }}>
+                    filterModal: true,
+                  },
+                }}
+              >
                 Filter
               </Link>
             </Button>
-            <Button size='lg' asChild>
+            <Button size="lg" asChild>
               <Link
                 href={{
-                  pathname: "insight/create"
-                }}>
-                  Create
+                  pathname: "insight/create",
+                }}
+              >
+                Create
               </Link>
             </Button>
+          </div>
         </div>
-
-      </div>  
-        <div className='pt-4'>
-            <InsightTable 
-              currentIndex={currentPage}
-              currentLimit={limit}
-              />
+        <div className="pt-4">
+          <InsightTable currentIndex={currentPage} currentLimit={limit} />
         </div>
-    </div>
-        {filterModal && <InsightFilterDialog/>}
+      </div>
+      {filterModal && <InsightFilterDialog />}
     </>
-  )
-}
+  );
+};
 
-
-export default InsightPage
+export default InsightPage;
